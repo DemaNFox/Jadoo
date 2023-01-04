@@ -1,0 +1,76 @@
+// Переменные
+$maincolor: #181e4b;
+$scolor: #5e6282;
+$thcolor: #212832;
+$bgcolor: #fff;
+
+// Шрифты //&display=swap - добавить при подключении через плагин
+@import url(https://fonts.googleapis.com/css?family=Poppins:regular,500,600&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Volkhov:700,&display=swap);
+// Основные настройки
+html {
+  height: 100%;
+}
+body {
+  height: 100%;
+  color: $scolor;
+  line-height: 1;
+  font-family: "Poppins", sans-serif;
+  font-size: rem(16);
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  // Блокировка скрола
+  &.lock {
+    overflow: hidden;
+    touch-action: none;
+  }
+}
+
+// Оболочка
+.wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  > main {
+    flex: 1 1 auto;
+    height: 100%;
+  }
+  // Фикс для слайдеров
+  > * {
+    min-width: 0;
+  }
+}
+// Ограничивающий контейнер
+[class*="__container"] {
+  max-width: 1190px;
+  padding: 0 15px;
+  box-sizing: content-box;
+  margin: 0 auto;
+}
+
+// БЭМ блоки
+.btn {
+  color: #ffffff;
+  padding: rem(18) rem(26);
+  border-radius: rem(10);
+}
+.title {
+  font-family: "Volkhov";
+  color: $maincolor;
+  font-style: normal;
+  font-weight: 700;
+  font-size: clamp(1.875rem, 1.415rem + 2.3vw, 3.125rem);
+  line-height: math.div(64, 50);
+  text-transform: capitalize;
+}
+.name {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: math.div(27, 18);
+  text-align: center;
+  color: $scolor;
+}
